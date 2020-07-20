@@ -3,7 +3,43 @@
 /** RESET AND LAYOUT
 ===================================*/
 
-@media (max-width : 991px ) {
+.certified-slider {
+  margin-top: 5rem !important;
+}
+
+
+/* .bx-wrapper .bx-prev {
+  background: url('../img/controls.png') no-repeat 0 -32px;
+  left: 0;
+}
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+.bx-wrapper .bx-next {
+  background: url('../img/controls.png') no-repeat -43px -32px;
+  right: 0;
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 999;
+  opacity: 0.4;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+@media (max-width : 991px ) { */
 
   .company .main_img {
     display: none;
@@ -268,7 +304,7 @@
   .service .more{
     top: -170px;
   }
-}
+/* } */
 
 
 @media (max-width: 425px) {

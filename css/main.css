@@ -682,12 +682,13 @@ section {
 
 
 #certification .certified {
-  width: 20%;
-  margin: 4rem auto 0 0;
+  /* width: 20%; */
+  /* padding: 4rem auto 0 0; */
 }
 
 #certification img {
   width: 100%;
+  height: 100%;
 }
 
 #location #map {
@@ -1113,7 +1114,7 @@ section {
   #recruit .welfare .welfare4,#recruit .welfare .welfare5,
   #recruit .welfare .welfare6, #recruit .welfare .welfare7 {
     margin-top: 4rem;
-    width:25%
+    width:25%;
   }
 
   .weapt .download .brochure span {

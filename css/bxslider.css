@@ -36,6 +36,9 @@
     -webkit-transform: translatez(0);
     
   }
+  .bx-wrapper .bx-controls-direction a.disabled {
+    display: none;
+  }
   /** THEME
   ===================================*/
   .bx-wrapper {
