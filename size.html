@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script>
+        function funcThisSize() {
+            $("#innerWidth").html( window.innerWidth );
+            $("#innerHeight").html( window.innerHeight );
+            $("#outerWidth").html( window.outerWidth );
+            $("#outerHeight").html( window.outerHeight );
+        }
+
+        $(function(){
+            $(window).resize( funcThisSize );
+            funcThisSize();
+});
+
+    </script>
+</head>
+<body>
+    <div>
+        브라우저 화면 크기 : <span id="innerWidth" class="point-in"></span> * <span id="innerHeight" class="point-in"></span>
+    </div>
+    <div>
+        브라우저 전체 크기 : <span id="outerWidth" class="point-out"></span> * <span id="outerHeight" class="point-out"></span>
+    </div>
+    
+    <p> </p>
+    <p>새창으로 띄워서 브라우저의 크기를 조절하면서 화면 크기의 변화를 확인해 보세요.</p>
+    </p><br/><p>
+    </p><br/><p>
+    </p><br/><p>
+</body>
+</html>

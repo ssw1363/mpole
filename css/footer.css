@@ -1,0 +1,58 @@
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#inner_footer a:link {
+  color: #040b14;
+}
+#inner_footer a:hover {
+  color: #fff;
+}
+
+#footer {
+  color: #040b14;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 9999;
+}
+
+#inner_footer {
+  position: absolute;
+  top: 160px;
+}
+
+#inner_footer .active {
+  background: #595959;
+  margin-top: 5px;
+}
+
+#footer>div>ul>li{
+  width: 100px;
+  height: 100px;
+}
+
+.footer_div {
+  padding-top: 10px;
+  text-align: center;
+}
+
+#footer .icon{
+  height: 50px;
+  font-size: 40px;
+}
+#footer .text{
+  font-size: 15px;
+}
+
+#footer li:hover{
+  color: #fff;
+}
+
+@media (max-width: 1199px) {
+  #footer{
+    display: none;
+  }
+}
