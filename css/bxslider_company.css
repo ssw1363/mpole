@@ -3,13 +3,13 @@
 /** RESET AND LAYOUT
 ===================================*/
 
-.certified-slider {
-  margin-top: 5rem !important;
+.bx-wrapper:last-child {
+  margin-top: 5rem;
 }
 
 
 /* .bx-wrapper .bx-prev {
-  background: url('../img/controls.png') no-repeat 0 -32px;
+  background: url('../resource/img/controls.png') no-repeat 0 -32px;
   left: 0;
 }
 .bx-wrapper .bx-prev:hover,
@@ -17,7 +17,7 @@
   background-position: 0 0;
 }
 .bx-wrapper .bx-next {
-  background: url('../img/controls.png') no-repeat -43px -32px;
+  background: url('../resource/img/controls.png') no-repeat -43px -32px;
   right: 0;
 }
 .bx-wrapper .bx-next:hover,
@@ -106,7 +106,7 @@
   /* LOADER */
   .bx-wrapper .bx-loading {
     min-height: 50px;
-    background: url('../img/bx_loader.gif') center center no-repeat #ffffff;
+    background: url('../resource/img/bx_loader.gif') center center no-repeat #ffffff;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -153,7 +153,7 @@
   }
   /* DIRECTION CONTROLS (NEXT / PREV) */
   .bx-wrapper .bx-prev {
-    background: url('../img/controls.png') no-repeat 0 -32px;
+    background: url('../resource/img/controls.png') no-repeat 0 -32px;
     left: 0;
   }
   .bx-wrapper .bx-prev:hover,
@@ -161,7 +161,7 @@
     background-position: 0 0;
   }
   .bx-wrapper .bx-next {
-    background: url('../img/controls.png') no-repeat -43px -32px;
+    background: url('../resource/img/controls.png') no-repeat -43px -32px;
     right: 0;
   }
   .bx-wrapper .bx-next:hover,
@@ -170,14 +170,14 @@
   }
   .bx-wrapper .bx-controls-direction a {
     position: absolute;
-    top: 50%;
+    top: 48.3%;
     margin-top: -16px;
     outline: 0;
     width: 32px;
     height: 32px;
     text-indent: -9999px;
     z-index: 999;
-    opacity: 0.4;
+    opacity: 0.;
   }
   .bx-wrapper .bx-controls-direction a.disabled {
     display: none;
@@ -192,7 +192,7 @@
     width: 10px;
     height: 11px;
     outline: 0;
-    background: url('../img/controls.png') -86px -11px no-repeat;
+    background: url('../resource/img/controls.png') -86px -11px no-repeat;
     margin: 0 3px;
   }
   .bx-wrapper .bx-controls-auto .bx-start:hover,
@@ -206,7 +206,7 @@
     width: 9px;
     height: 11px;
     outline: 0;
-    background: url('../img/controls.png') -86px -44px no-repeat;
+    background: url('../resource/img/controls.png') -86px -44px no-repeat;
     margin: 0 3px;
   }
   .bx-wrapper .bx-controls-auto .bx-stop:hover,
@@ -314,6 +314,13 @@
 
   .bx-wrapper .bx-next {
     right: 18px;
+  }
+
+}
+
+@media (max-width : 991px){
+  .company .main_img {
+    display: none;
   }
 
 }

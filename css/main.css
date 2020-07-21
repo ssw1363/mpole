@@ -45,7 +45,7 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   font-family: 'Nanum Barun Gothic', sans-serif;
-  background-image: url(../img/background_img.png);
+  background-image: url(../resource/img/background_img.png);
   /* background-repeat: no-repeat; */
   background-position: right top;
   background-attachment: fixed;
@@ -440,7 +440,7 @@ section {
 # Company
 --------------------------------------------------------------*/
 .company {
-  margin-top: 110px;
+  margin-bo : 110px;
 }
 
 #company {
@@ -681,14 +681,15 @@ section {
 }
 
 
-#certification .certified {
-  /* width: 20%; */
-  /* padding: 4rem auto 0 0; */
+#certification .certified div{
+  margin-bottom:  30px;
 }
 
 #certification img {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
+  width: 260px;
+  height: 370px;
 }
 
 #location #map {
