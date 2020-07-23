@@ -8,6 +8,7 @@ $( document ).ready(function() {
         $(this).click(function(){
             var curr_page = $("section").attr("class"); 
             var uri = $(this).data('position');
+            console.log(uri);
             var main = $('#main');
             var href= $(this).data('focus');
             // sessionStorage.setItem("href",href);

@@ -183,13 +183,10 @@
     });
   })
 
-  var a_tag = $('[data-position]');
-  var curr_uri;
-  var prev_page ;
-
-
+  
+  
+  
   
   
 })(jQuery);
-
 

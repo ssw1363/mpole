@@ -81,7 +81,7 @@ a:link {
   background: #149ddd;
   color: #fff;
   transition: display 0.5s ease-in-out;
-  z-index: 99999;
+  z-index: 9999;
 }
 
 .back-to-top i {
