@@ -3,12 +3,12 @@ var curr_uri;
 var prev_page ;
 
 $( document ).ready(function() {
-    console.log(a_tag)
+    // console.log(a_tag)
     $(a_tag).each(function(){
         $(this).click(function(){
             var curr_page = $("section").attr("class"); 
             var uri = $(this).data('position');
-            console.log(uri);
+            // console.log(uri);
             var main = $('#main');
             var href= $(this).data('focus');
             // sessionStorage.setItem("href",href);

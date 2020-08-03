@@ -35,7 +35,7 @@ $( document ).ready( function() {
       }
     }); 
 
-  });
+});
   
   if(window.innerWidth <= '540') {
     console.log(window.innerWidth+"1");
@@ -54,7 +54,7 @@ $( document ).ready( function() {
     controls: true,    // 이전 다음 버튼 노출 여부
     touchEnabled : (navigator.maxTouchPoints > 0), //크롬에서 링크 안될때 추가
   });
-}else if(window.innerWidth <= '768') {
+  }else if(window.innerWidth <= '768') {
   var main = $('.main-slider').bxSlider({
     mode: 'horizontal',// 가로 방향 수평 슬라이드
     speed: 500,        // 이동 속도를 설정
@@ -70,7 +70,7 @@ $( document ).ready( function() {
     controls: true,    // 이전 다음 버튼 노출 여부
     touchEnabled : (navigator.maxTouchPoints > 0), //크롬에서 링크 안될때 추가
   });
-}
+  }
 
   
   $(".bx-stop").click(function(){	// 중지버튼 눌렀을때
@@ -101,5 +101,3 @@ $( document ).ready( function() {
     
   });
   
-
-

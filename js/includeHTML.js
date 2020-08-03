@@ -13,6 +13,7 @@ function includeLayiut(){
         self.load(url, function(){
             self.removeAttr("data-include");
         });
+        // self.removeAttr("data-include");
     });
 }
 // 새로고침 막기

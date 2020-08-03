@@ -1,36 +1,39 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>board_detail.php</title>
-        <link rel="stylesheet" href="/css/bootstrap.css">
+<section id="detail" class="detail">
+    <div class="container">
         <style>
-            table {
+            .table {
                 table-layout: fixed;
                 word-wrap: break-word;
+                color : white;
             }
         </style>
-    </head>
-    <body>
         <h1 class="display-4">board_detail.php</h1>
+     
         <?php
-            require("dbinfo.php");
-            
+            require("./connectDB.php");
+            extract($_POST);
+
+            $conn = isConnectDb($db);
  
             //mysqli_connect()함수로 커넥션 객체 생성
-            $conn = mysqli_connect($db['host'],$db['user'],$db['pass'],$db['name']);
+            // $conn = mysqli_connect($db['host'],$db['user'],$db['pass'],$db['name']);
             
             // //mysql 커넥션 객체 생성
             // $conn = mysqli_connect("localhost", "root", "java0000","jjdev");
             //커넥션 객체 생성 여부 확인
-            if($conn) {
-                echo "연결 성공<br>";
-            } else {
-                die("연결 실패 : " .mysqli_error());
-            }
+            // if($conn) {
+            //     echo "연결 성공<br>";
+            // } else {
+            //     die("연결 실패 : " .mysqli_error());
+            // }
             //board_list.php 에서 넘어온 글 번호 저장 및 출력
-            $board_no = $_GET["board_no"];
+                
+            echo $board_no ;
+            // $board_no = $_GET["board_no"];
             echo $board_no."번째 글 내용<br>";
+            //입장 시 조회수 +1 
+            $sql = "UPDATE board set board_hit = board_hit + 1 where board_no = $board_no";
+            $result = mysqli_query($conn,$sql);
             //board 테이블에서 board_no값이 일치하는 board_no, board_title, board_content, board_user, board_date 필드 값 조회 쿼리
             $sql = "SELECT board_no, board_title, board_content, board_user, board_date FROM board WHERE board_no = '".$board_no."'";
             $result = mysqli_query($conn,$sql);
@@ -88,7 +91,16 @@
         </table>
         <br>
         &nbsp;&nbsp;&nbsp;
-        <a class="btn btn-primary" href="./board_list.php"> 리스트로 돌아가기</a>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-    </body>
-</html>
+        <?php
+                echo "<a class='btn btn-primary' onclick='board_list()'> 리스트로 돌아가기</a> ";   
+              ?>
+
+        <!-- <a class="btn btn-primary" href="./board_list.php"> 리스트로 돌아가기</a> -->
+    </div>
+</section>
+
+<script>
+  function board_list(){ 
+    $('#main').load('./php/notice.php');
+    }
+</script>

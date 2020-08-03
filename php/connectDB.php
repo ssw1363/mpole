@@ -1,13 +1,13 @@
 <?php
-// $db['host'] = 'localhost';
-// $db['user'] = 'root';
-// $db['pass'] = '123456';
-// $db['name'] = 'tutorial_php';
+$db['host'] = '127.0.0.1';
+$db['user'] = 'root';
+$db['pass'] = '123456';
+$db['name'] = 'tutorial_php';
 
-$db['host'] = 'localhost';
-$db['user'] = 'mpolesystem';
-$db['pass'] = '7842mpole7842';
-$db['name'] = 'mpolesystem';
+// $db['host'] = 'localhost';
+// $db['user'] = 'mpolesystem';
+// $db['pass'] = '7842mpole7842';
+// $db['name'] = 'mpolesystem';
 // $db['port'] = '';
 function isConnectDb($db)
 {

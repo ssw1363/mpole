@@ -1,7 +1,7 @@
 <?php require_once('./connectDB.php');
   $currentPage = 1;
-  if (isset($_GET["currentPage"])) {
-      $currentPage = $_GET["currentPage"];
+  if (isset($_POST["currentPage"])) {
+      $currentPage = $_POST["currentPage"];
   }
   //mysqli_connect()함수로 커넥션 객체 생성
   $conn= isConnectDb($db);
@@ -15,6 +15,7 @@
   //행 갯수 조회 쿼리가 실행 됐는지 여부
   if($resultCount) {
       echo "행 갯수 조회 성공 : ". $totalRowNum."<br>";
+      echo "현재 페이지 위치 : ". $currentPage."<br>";
   } else {
       echo "결과 없음: ".mysqli_error($conn);
   }
@@ -62,7 +63,8 @@
             </td>
             <td>
               <?php
-                echo "<a href='./php/board_detail.php?board_no=".$row["board_no"]."'>";
+                echo "<a onclick='board_detail(".$row["board_no"].")'>";
+                // <a href='./php/board_detail.php?board_no=".$row["board_no"]."'>";
                 echo $row["board_title"];
                 echo "</a>"   
               ?>
@@ -139,9 +141,32 @@
       </table>
     </div>
       <hr />
+      &nbsp;&nbsp;&nbsp;&nbsp;
+        <?php
+            //currentPage 변수가 1보다 클때만 이전 버튼이 활성화 되도록 함
+            if($currentPage > 1 ) { 
+              echo "<a class='btn btn-primary align-items-end' onclick= 'go_list($currentPage-1)' >이전</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+              //이전 버튼이 클릭될때 GET방식으로 currentPage변수 값에 1을 뺀 값이 넘어가도록 함
+                // echo "<a class='btn btn-primary' href ='./board_list.php?currentPage=".($currentPage-1)."'>이전</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+ 
+            $lastPage = ($totalRowNum-1) / $rowPerPage;
+ 
+            if (($totalRowNum-1) % $rowPerPage !=0) { 
+                $lastPage += 1;
+            }
+            //lastPage변수가 currentPage 변수보다 클때만 다음 버튼이 활성화 되도록 함
+            if($currentPage < $lastPage) { 
+              echo "<a class='btn btn-primary align-items-end' onclick= 'go_list($currentPage+1)'>다음</a>";
+              //다음 버튼이 클릭될때 GET방식으로 currentPage변수 값에 1을 더한 값이 넘어가도록 함
+                // echo "<a class='btn btn-primary' href='./board_list.php?currentPage=".($currentPage+1)."'>다음</a>";
+            }
+            mysqli_close($conn);
+        ?>
+        &nbsp;&nbsp;
+        <a class="btn btn-primary align-items-end" onclick="write_notice()">글 쓰기</a>
       
-      
-      <nav aria-label="Page navigation" class="btn-toolbar justify-content-between" role="toolbar">
+      <!-- <nav aria-label="Page navigation" class="btn-toolbar justify-content-between" role="toolbar">
         <div></div>
         <ul class="pagination justify-content-center">
           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -151,6 +176,8 @@
           <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
         <div></div>
-      </nav>
+      </nav> -->
   </div>
 </section>
+
+<script src="./js/notice.js"></script>

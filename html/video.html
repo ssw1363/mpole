@@ -1,0 +1,71 @@
+<script>
+    // 마우스 진입 이벤트
+    $(".preview_div").each(function(){
+        var url = $(this).data('gif_url'); 
+        $(this).on('mouseenter', function(){
+            // 재생 버튼 감추기
+            $(this).find('img').hide();
+            $(this).find('i').hide();
+            // 썸네일 이미지를  gif 이미지로 변경
+            $(this).css('background-image', 'url('+url+')');
+        });
+        $(this).on('mouseleave', function(){
+            // 재생 버튼 보아기
+            $(this).find('img').show();
+            $(this).find('i').show();
+            // gif 이미지를  썸네일 이미지로 변경
+            // $(this).css('background-image', 'url('+url+')');
+        });
+    });
+   
+  </script>
+
+
+<link rel="stylesheet" href="./css/YouTubePopUp.css">
+<section id="video" class="video">
+    <div class="container">
+      <div class="col-lg-12 content" >
+        <div class="content-title"><h3><strong>V</strong>ideo </h3><div><span>제품 동영상</span></div></div>
+            <div class="row">
+                <div class="preview_div bla-1" data-href="https://youtu.be/LEJfSZH5Yhw" data-gif_url="./resource/img/mpole/video/deeplearning.gif">
+                  <img src="https://i.ytimg.com/vi/LEJfSZH5Yhw/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLASrvrEZ9rCM3l3ueRTkrlpJmjH1g" alt="">
+                  <i class='bx bx-play-circle' style="font-size: 70px; color: silver;"></i>
+                  <div>[엠폴시스템]Deep Learning<br>학습절차</div>
+                </div>
+                <div class="preview_div bla-1" data-href="https://youtu.be/mBfZuK6YpyQ" data-gif_url="./resource/img/mpole/video/LiDAR.gif">
+                  <img src="https://i.ytimg.com/vi/mBfZuK6YpyQ/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCtur_FqIzU4QmwG4_TEKIMopONTw" alt="">
+                  <i class='bx bx-play-circle' style="font-size: 70px; color: silver;"></i>
+                  <div>[엠폴시스템]LiDAR 기반 외곽<br>방호 솔루션 시연(IMP)</div>
+                </div>
+                <div class="preview_div bla-1" data-href="https://youtu.be/B-QyyqXekFo" data-gif_url="./resource/img/mpole/video/IMP_testing1.gif">
+                  <img src="https://i.ytimg.com/vi/B-QyyqXekFo/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLD8IcssCyEm4YDFMqKU5iaiX4z4lg" alt="">
+                  <i class='bx bx-play-circle' style="font-size: 70px; color: silver;"></i>
+                  <div>(주)엠폴시스템 - 통합관제 플<br>랫폼(IMP) 시연 동영상</div>
+                </div>
+                <div class="preview_div bla-1" data-href="https://youtu.be/KZ13yKhs8C0" data-gif_url="./resource/img/mpole/video/IMP_testing2.gif">
+                  <img src="https://i.ytimg.com/vi/KZ13yKhs8C0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLA09nwn1w9uwRQxaApO6vWL6XLqzQ" alt="">
+                  <i class='bx bx-play-circle' style="font-size: 70px; color: silver;"></i>
+                  <div>MPolesystem IMP시연</div>
+                </div>
+                <div class="preview_div bla-1" data-href="https://youtu.be/qiX2VB0xatE" data-gif_url="./resource/img/mpole/video/mpole_promotion.gif">
+                  <img src="https://i.ytimg.com/vi/qiX2VB0xatE/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDUm3FF57bfzuwXgeh1WS-kvEUicw" alt="">
+                  <i class='bx bx-play-circle' style="font-size: 70px; color: silver;"></i>
+                  <div>엠폴시스템 기업 홍보 동영상</div>
+                </div>
+                <div class="preview_div bla-1" data-href="https://youtu.be/sKJwytNgmT0" data-gif_url="./resource/img/mpole/video/apt_access_control.gif">
+                  <img src="https://i.ytimg.com/vi/sKJwytNgmT0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCQI-r55VAtP2TW4xPNo4_vh13_RA" alt="">
+                  <i class='bx bx-play-circle' style="font-size: 70px; color: silver;"></i>
+                  <div>엠폴시스템_아파트시장 출입<br>통제 구역 감시</div>
+                </div>
+            </div>
+
+            
+      </div>
+    </div>
+  </section>
+  <script src="./js/YouTubePopUp.jquery.js"></script>  
+  <script>
+    jQuery(function(){
+			jQuery("div.bla-1").YouTubePopUp({ autoplay: true });
+		});
+  </script>

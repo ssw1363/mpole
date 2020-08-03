@@ -12,7 +12,6 @@ $dw_only = false;
 //▶ method=post 방식으로 넘어온 값들을 extract 시킴(php.ini 파일에서 register_globals=off 일때 필요)
 extract($_POST);
 
-
 // echo $from_name;
 // echo $from;
 // echo $subject;
@@ -27,27 +26,27 @@ try {
     $mail -> SMTPDebug = 4;    // 디버깅 설정
     $mail -> isSMTP(true);        // SMTP 사용 설정
 
-    $mail -> Host = "wsmtp.ecounterp.com";                // email 보낼때 사용할 서버를 지정
-    $mail -> SMTPAuth = true;                        // SMTP 인증을 사용함
-    $mail -> Username = "swseo@mpole.co.kr";    // 메일 계정
+    $mail -> Host = "wsmtp.ecounterp.com";          // email 보낼때 사용할 서버를 지정
+    $mail -> SMTPAuth = true;                       // SMTP 인증을 사용함
+    $mail -> Username = "swseo@mpole.co.kr";        // 메일 계정
     $mail -> Password = "dhksl2437";                // 메일 비밀번호
     $mail -> SMTPSecure = "tls";                    // SSL을 사용함
     // $mail -> Port = 465;                            // email 보낼때 사용할 포트를 지정
     $mail -> Port = 587;                            // email 보낼때 사용할 포트를 지정
-    $mail -> CharSet = "utf-8";                        // 문자셋 인코딩
+    $mail -> CharSet = "utf-8";                     // 문자셋 인코딩
 
     // 보내는 메일
     $mail -> setFrom("swseo@mpole.co.kr", "문의메일");
 
     // 받는 메일
-    $mail -> addAddress("as@mpole.co.kr", "receive01");
+    $mail -> addAddress("swseo@mpole.co.kr", "엠폴시스템");
     
     // 첨부파일
     // $mail -> addAttachment("$FILEUPLOAD0");
     // $mail -> addAttachment("./anjihyn.jpg");
 
     // 메일 내용
-    $mail -> isHTML(true);                                               // HTML 태그 사용 여부
+    $mail -> isHTML(true);                    // HTML 태그 사용 여부
     $mail -> Subject = $subject;              // 메일 제목
     $mail -> Body = "<table width=637 border=0 cellspacing=0 cellpadding=0>
     <tr>
@@ -105,9 +104,12 @@ try {
     // 메일 전송
     $mail -> send();
     
-    echo "Message has been sent";
-
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error : ", $mail -> ErrorInfo;
+} finally {
+    // Header("Location: mpole.co.kr");
+    echo("<script>location.href='http://www.mpole.co.kr';</script>"); 
+
 }
+
 ?>
