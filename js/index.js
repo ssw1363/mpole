@@ -186,3 +186,76 @@
   
   
 })(jQuery);
+
+document.cookie = 'same-site-cookie=foo; SameSite=Lax';
+document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
+
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('AS 문의 메일 발송')
+//   modal.find('.modal-body #recipient-name').val("recipient");
+})
+function goSubmit()
+{
+    var fr = document.frm;
+    if(checkSpace(fr.from_name.value)){
+        alert("이름을 입력해주세요");
+        fr.from_name.focus();
+        return;
+    }else if(checkSpace(fr.from.value)){
+        alert("메일을 입력해주세요");
+        fr.from.focus();
+        return;
+    }else if(checkEmail(fr.from.value)){
+        alert("잘못된 이메일 주소 입니다.\n이메일 주소를 확인한 다음 다시 입력해 주세요");
+        fr.from.value = "";
+        fr.from.focus();
+        return;
+    }else if(checkSpace(fr.subject.value)){
+        alert("제목을 입력해주세요");
+        fr.subject.focus();
+        return;
+    }else if(checkSpace(fr.content.value)){
+        alert("문의 내용을 입력해주세요");
+        fr.content.focus();
+        return;
+    }
+    var gsWin = window.open("about:blank", "winName", 'width=2px, height=2px, right=0 , bottom=0,  menubar=no, status=no, toolbar=no, opacity=0.1');
+        fr.action = "./php/mail2.php";
+        frm.target = "winName";
+        frm.submit();
+        $('.modal').modal("hide");
+        reset(fr);
+}
+
+
+var reset = function (frm){
+    frm.from_name.value = "";
+    frm.from.value = "";
+    frm.subject.value = "";
+    frm.content.value = "";
+    frm.file.value = "";
+    frm.file2.value = "";
+}
+
+//▶ str 이 공백 문자인지 확인
+function checkSpace(str) {
+   return str.replace(/ /gi,"") == "";
+}
+
+//▶ 이메일 주소 유효성 확인
+function checkEmail(str) {
+    var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+    if(!reg_email.test(str))    
+        return true;         
+    else    
+        return false;               
+
+}
+
+const cur_page = document.getElementById('curr_page');

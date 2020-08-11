@@ -1,34 +1,6 @@
-$(document).ready(function(){
 
-    // document.getElementById("main").innerHTML='<object type="text/html" data="main.html"></object>';
-
-    
-    
-    // var main_div = getElementById("main");
-    
-    // $(main_div).attr("data-include","imp.html");
-})
 $( document ).ready( function() {
-  
-  // var uri;
-  // var main = $('#main');
-  // var a_tag = $('[data-position]');
-  // $(a_tag).each(function(){
-  //   $(this).click(function(){
-  //     uri = $(this).data('position');
-  //     main.css("opacity","0");
-  //     main.scrollTop(0);
-  //     main.animate({
-  //       // opacity: 0
-  //     }, function(){
-  //       // main.load(uri).scrollTop(0); 
-  //       $(this).animate({
-  //         opacity: 1
-  //       },1000,'linear');
-  //     });
-      
-  //   });
-  // });   
+ 
   $(window).resize(function(){
     if($("section").attr("id") == "index"){
       window.location.replace("./index.html");
@@ -72,32 +44,35 @@ $( document ).ready( function() {
   });
   }
 
-  
-  $(".bx-stop").click(function(){	// 중지버튼 눌렀을때
-    main.stopAuto();
-    $(".bx-stop").hide();
-    $(".bx-start").show();
-    return false;
-  });
-  
-  $(".bx-start").click(function(){	//시작버튼 눌렀을때
-    main.startAuto();
-    $(".bx-start").hide();
-    $(".bx-stop").show();
-    return false;
-  });
-  
-  $(".bx-start").hide();	//onload시 시작버튼 숨김.
-  
-  
-  $('.bxslider').on('mousewheel', function(event) {
+  if(window.innerWidth <= '768' ){
+    $(".bx-stop").click(function(){	// 중지버튼 눌렀을때
+      main.stopAuto();
+      $(".bx-stop").hide();
+      $(".bx-start").show();
+      return false;
+    });
     
-    //console.log(event.deltaX, event.deltaY, event.deltaFactor);
-    if(event.deltaY > 0){
-      main.goToPrevSlide();
-    } else {
-      main.goToNextSlide(); 
-    }
+    $(".bx-start").click(function(){	//시작버튼 눌렀을때
+      main.startAuto();
+      $(".bx-start").hide();
+      $(".bx-stop").show();
+      return false;
+    });
     
-  });
+    $(".bx-start").hide();	//onload시 시작버튼 숨김.
+    
+    
+    $('.bxslider').on('mousewheel', function(event) {
+      
+      //console.log(event.deltaX, event.deltaY, event.deltaFactor);
+      if(event.deltaY > 0){
+        main.goToPrevSlide();
+      } else {
+        main.goToNextSlide(); 
+      }
+      
+    });
+    
+  }
+
   

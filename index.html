@@ -26,11 +26,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <script>
-        document.cookie = "safeCookie1=foo; SameSite=Lax";
-        document.cookie = "safeCookie2=foo";
-        document.cookie = "crossCookie=bar; Samesite=None; Secure;";
-    </script>
+    
     <!-- <link rel="stylesheet" href="./main/main.css"> -->
     <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
     <script src="./js/jqury-latest.js"></script>
@@ -42,9 +38,8 @@
     
     <!-- ======= Mobile nav toggle button ======= -->
     <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-    
     <header id="header" role="header" data-include="./html/header.html"></header>
-    <main id="main" role="main" data-include="./html/video.html"></main>
+    <main id="main" role="main" data-include="./html/post.html"></main>
     <footer id="footer" role="footer" data-include="./html/footer.html"></footer>
     
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
@@ -62,66 +57,14 @@
     <script src="./vendor/aos/aos.js"></script>
     <script src="./js/jquery.bxslider.js"></script> 
     <script src="./js/jquery.fullscreen.js"></script>
+    <script src="./js/YouTubePopUp.jquery.js"></script>  
     
     
     <!-- Template Main JS File -->
     <script src="./js/includeHTML.js"></script> 
     <script src="./js/index.js"></script>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: black; font-size: 15px;"> 
-        <div class="modal-dialog modal-height">
-            <div class="modal-content modal-height">
-                <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel"><strong>AS 문의 메일 발송</strong></h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                <form method="post" name="frm" id="frm" action="./php/mail2.php" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">발송자:</label>
-                        <input type="text" class="form-control" name="from_name" id="recipient-name" placeholder="이름..." style="font-size: 15px;">
-                        </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">이메일:</label>
-                        <input type="text" class="form-control" name="from" id="recipient-name" placeholder="이메일..." style="font-size: 15px;">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">제목:</label>
-                        <input type="text" class="form-control" name="subject" id="message-title" style="font-size: 15px;">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">문의 내용:</label>
-                        <textarea class="form-control" name="content" id="message-text" rows="20" style="font-size: 15px;"></textarea>
-                    </div>
-                    <!-- <div class="form-group">
-                        <label for="message-text" class="col-form-label">첨부 파일:</label>
-                        <input class="form-control file-form" type="FILE" id="FILEUPLOAD0" name="FILEUPLOAD0" />
-                    </div> -->
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size: 15px;">Close</button>
-                    <button type="submit" class="btn btn-primary" style="font-size: 15px;">메일 발송</button>
-                </form>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-<script>
-    $('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('AS 문의 메일 발송')
-//   modal.find('.modal-body #recipient-name').val("recipient")
-
-})
-
-</script>
-
+    
 </body>
 
 </html>

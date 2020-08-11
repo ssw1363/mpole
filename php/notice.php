@@ -4,6 +4,7 @@
       $currentPage = $_POST["currentPage"];
   }
   //mysqli_connect()함수로 커넥션 객체 생성
+
   $conn= isConnectDb($db);
 
   //페이징 작업을 위한 테이블 내 전체 행 갯수 조회 쿼리
@@ -13,12 +14,12 @@
       $totalRowNum = $rowCount["count(*)"];   //php는 지역 변수를 밖에서 사용 가능.
   }
   //행 갯수 조회 쿼리가 실행 됐는지 여부
-  if($resultCount) {
-      echo "행 갯수 조회 성공 : ". $totalRowNum."<br>";
-      echo "현재 페이지 위치 : ". $currentPage."<br>";
-  } else {
-      echo "결과 없음: ".mysqli_error($conn);
-  }
+  // if($resultCount) {
+  //     echo "행 갯수 조회 성공 : ". $totalRowNum."<br>";
+  //     echo "현재 페이지 위치 : ". $currentPage."<br>";
+  // } else {
+  //     echo "결과 없음: ".mysqli_error($conn);
+  // }
 
   $rowPerPage = 5;   //페이지당 보여줄 게시물 행의 수
   $begin = ($currentPage -1) * $rowPerPage;
@@ -27,11 +28,11 @@
   $sql = "SELECT board_no, board_title, board_user, board_date, board_hit FROM board order by board_no desc limit ".$begin.",".$rowPerPage."";
   $result = mysqli_query($conn,$sql);
   //쿼리 조회 결과가 있는지 확인
-  if($result) {
-    echo "조회 성공";
-  } else {
-    echo "결과 없음: ".mysqli_error($conn);
-  }
+  // if($result) {
+  //   echo "조회 성공";
+  // } else {
+  //   echo "결과 없음: ".mysqli_error($conn);
+  // }
 ?>
 
 
@@ -43,11 +44,11 @@
       <table class="table table-hover" style="color: aliceblue; text-align: center;">
         <thead>
           <tr>
-            <th scope="col" style="width:50px;">번호</th>
+            <th scope="col" style="max-width:50px;">번호</th>
             <th scope="col">제목</th>
-            <th scope="col" style="width:115px;">작성자</th>
-            <th scope="col" style="width:90px;">날짜</th>
-            <th scope="col" style="width:60px;">조회</th>
+            <th scope="col" style="max-width:115px;">작성자</th>
+            <th scope="col" style="max-width:90px;">날짜</th>
+            <th scope="col" style="max-width:60px;">조회</th>
           </tr>
         </thead>
         <tbody>
@@ -164,7 +165,7 @@
             mysqli_close($conn);
         ?>
         &nbsp;&nbsp;
-        <a class="btn btn-primary align-items-end" onclick="write_notice()">글 쓰기</a>
+        <!-- <a class="btn btn-primary align-items-end" onclick="write_notice()">글 쓰기</a> -->
       
       <!-- <nav aria-label="Page navigation" class="btn-toolbar justify-content-between" role="toolbar">
         <div></div>

@@ -46,6 +46,7 @@ body {
   scrollbar-width: none; /* Firefox */
   font-family: 'Nanum Barun Gothic', sans-serif;
   background-image: url(../resource/img/background_img.png);
+  background-size: cover;
   /* background-repeat: no-repeat; */
   background-position: right top;
   background-attachment: fixed;
@@ -935,8 +936,67 @@ section {
   padding-bottom: 30px;
 }
 
+.detail .table {
+  table-layout: fixed;
+  word-wrap: break-word;
+  color : white;
+  font-size: 15px;
+}
 
+a.more {
+  margin-bottom: 3rem;
+}
+
+
+.post_list:after {
+  content : "";
+  width: 100% ;
+  border-bottom: 1px solid gray;
+  margin: 20px 0;
+}
+
+.post .post_img{
+  width: 30%;
+  padding-right: 3rem;
   
+}
+
+.post .post_img img{
+  width: 100%;
+}
+
+.post .post_desc{
+  position: relative;
+  width: 70%;
+}
+
+.post .post_title{
+  font-size: 20px;
+}
+
+.post .post_info{
+  padding-top: 1.5rem;
+  font-size: 13px;
+}
+
+.post .post_content {
+  padding-top: 2.5rem;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 라인수 */
+  -webkit-box-orient: vertical;
+  /* line-height: 1.2em; */
+  /* height: 3.6em; */
+}
+
+.post .post_more {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 /*--------------------------------------------------------------
 # Responsive Media Size
 --------------------------------------------------------------*/
@@ -966,7 +1026,7 @@ section {
   }
 
   .content {
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
   }
 
@@ -1096,8 +1156,30 @@ section {
   .graybox {
     width: 50%;
   }
+
 }
 
+@media (max-width: 990px ){
+  .video .container {
+    margin : 0 auto;
+    max-width: 95%;
+  }
+
+  .video .preview_div {
+    /* overflow: hidden; */
+  }
+
+  .video .preview_div i {
+    font-size: 7.0707vw;
+  }
+
+  #video .video_title {
+    font-size: 1.2121vw;
+    overflow: hidden;
+  }
+  
+
+}
 
 /* tablet screen */
 @media (max-width: 767px ) {
@@ -1138,6 +1220,12 @@ section {
   .weapt .download .content-div {
     font-size: 2.5rem;
   }
+
+  .detail .table {
+    font-size : 1.9557vw;
+  }
+
+
 }
 
 /* mobile screen */
@@ -1193,11 +1281,7 @@ section {
 
 }
 
-@media (min-width : 1440px ) AND (max-width : 1919px ) {
-  html {
-    /* font-size: 7.62px; */
-  }
-  
+@media (min-width : 1440px ) AND (max-width : 1919px ) {  
   .container {
     /* max-width: 1150px; */
     padding: 40px 140px 0 50px;
@@ -1205,9 +1289,6 @@ section {
 }
 /* desktop screen under 1440 */
 @media ( min-width: 1024px ) and ( max-width: 1440px ) {
-  html {
-    /* font-size: 7px; */
-  } 
   #index .container {
     width: 100%;
     max-width: 1240px;

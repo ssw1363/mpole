@@ -16,9 +16,7 @@ $( document ).ready( function() {
                 opacity: 1
             },1000,'linear');
         });
-        function board_detail (no){
-
-        }
+        
         });
     });   
 });

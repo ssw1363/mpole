@@ -4,6 +4,13 @@
         <!-- board_add_action.php로 넘기는 폼 -->
         <form class="form-horizontal" action="./php/board_add_action.php" method="post">
             <div class="form-group">
+                <label for="exampleInputName1" class="col-sm-2 control-label">작성자명 : </label>
+                <div class="col-sm-10">
+                    <!-- 작성자명 입력 상자 -->
+                    <input class="form-control" name="board-user" id="name" type="text" placeholder="Name"/>
+                </div>
+            </div>
+            <div class="form-group">
                 <label for="exampleInputPassword1" class="col-sm-2 control-label">비밀번호 : </label>
                 <div class="col-sm-10">
                     <!-- 글 비밀번호 입력 상자 -->
@@ -24,13 +31,7 @@
                     <textarea class="form-control" name="board_content" id="content" rows="5" cols="50" placeholder="Content"></textarea>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputName1" class="col-sm-2 control-label">작성자명 : </label>
-                <div class="col-sm-10">
-                    <!-- 작성자명 입력 상자 -->
-                    <input class="form-control" name="board-user" id="name" type="text" placeholder="Name"/>
-                </div>
-            </div>
+            
             
             <div>
                 &nbsp;&nbsp;&nbsp;

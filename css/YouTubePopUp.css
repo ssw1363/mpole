@@ -129,34 +129,50 @@ body.logged-in .YouTubePopUp-Wrap{ /* For WordPress */
     opacity:0.5;
 }
 
+.video .row>div {
+    width: 33.3%;
+    padding: 4rem 3rem 8rem;
+    position: relative;
+}
+
 .preview_div {  
     position: relative;
-    width: 33.3%;
-    padding: 5rem 0;
+    /* width: 33.3%; */
     text-align: center;
-    cursor: pointer;
+    /* cursor: pointer; */
     background-repeat: no-repeat;
-    background-size: 245px;
+    background-size: 100%;
     background-position: center;
-    border: 1px solid white;
+    /* border: 1px solid silver; */
     /* background-size: 100%; */
-    /* background-image: url(https://i.ytimg.com/vi/LEJfSZH5Yhw/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLASrvrEZ9rCM3l3ueRTkrlpJmjH1g); */
 }
-.preview_div > img {vertical-align: middle;}
+
+.preview_div  img {
+    vertical-align: middle;
+    width: 100%;
+}
 
 .preview_div i {
     position: absolute;
-    left: 43%;
-    top: 35%;
+    left: 40%;
+    right: 40%;
+    top: 32%;
+    bottom: 32%;
+    font-size: 70px;
+    color: silver;
 }
 
-.preview_div div {
-    font-size: 12px;
+.video .video_title {
+    font-size: 15px;
     position: absolute;
-    left: 30%;
-    right: 30%;
-    top : 82%;
+    left: 12%;
+    right: 12%;
+    top: 105%;
+    height: 55px;
 }
+
+
+
 
 @media all and (max-width: 768px) and (min-width: 10px){
     .YouTubePopUp-Content{
@@ -183,3 +199,14 @@ body.logged-in .YouTubePopUp-Wrap{ /* For WordPress */
         bottom:262px;
     }
 }
+
+
+@keyframes fade-out {
+    from {
+      opacity: 1;
+        
+    }
+    to {
+      opacity: 0;
+    }
+  }

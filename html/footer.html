@@ -14,7 +14,7 @@
               <div class="footer_div text">AS문의</div>
             </a>
           </li>
-          <li class="active">
+          <li class="active" data-position="./php/notice.php">
             <div class="footer_div icon"><i class="bx bxs-file-find"></i></div>
             <div class="footer_div text">자료실</div>
           </li>
@@ -34,6 +34,50 @@
           </li>
         </ul>
       </div>
+
+
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: black; font-size: 15px;"> 
+        <div class="modal-dialog modal-height">
+            <div class="modal-content modal-height">
+                <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel"><strong>AS 문의 메일 발송</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <form method="post" name="frm" id="frm" action="" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">발송자:</label>
+                        <input type="text" class="form-control" name="from_name" id="recipient-name" placeholder="이름..." style="font-size: 15px;">
+                        </div>
+                    <div class="form-group">
+                        <label for="recipient-mail" class="col-form-label">이메일:</label>
+                        <input type="text" class="form-control" name="from" id="recipient-mail" placeholder="이메일..." style="font-size: 15px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">제목:</label>
+                        <input type="text" class="form-control" name="subject" id="message-title" style="font-size: 15px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">문의 내용:</label>
+                        <textarea class="form-control" name="content" id="message-text" rows="18" style="font-size: 15px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">첨부 파일:</label>
+                        <input class="form-control file-form" type="file" id="FILEUPLOAD0" name="file" />
+                        <input class="form-control file-form" type="file" id="FILEUPLOAD1" name="file2" />
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size: 15px;">Close</button>
+                    <button type="button" class="btn btn-primary" style="font-size: 15px;" onclick="goSubmit()">메일 발송</button>
+                </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
     </footer>
     <script src="./js/footer.js"></script>
     <!-- End  Footer --> 

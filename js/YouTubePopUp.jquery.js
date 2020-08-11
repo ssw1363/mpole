@@ -21,10 +21,9 @@
         }, options );
 
         $(this).on('click', function (e) {
-            console.log("눌렸냐?")
             var youtubeLink = $(this).data("href");
             
-
+            // console.log(youtubeLink);
             if( youtubeLink.match(/(youtube.com)/) ){
                 var split_c = "v=";
                 var split_n = 1;
@@ -79,3 +78,7 @@
     };
  
 }( jQuery ));
+
+document.cookie = "safeCookie1=foo; SameSite=Lax";
+document.cookie = "crossCookie=bar; Samesite=None; Secure;";
+

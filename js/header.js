@@ -1,30 +1,50 @@
 var a_tag = $('[data-position]');
-var curr_uri;
+var cur_url;
 var prev_page ;
+class Stack {
+    constructor() {
+      this._arr = [];
+    }
+  
+    push(item){
+      this._arr.push(item);
+    }
+    pop(){
+      return this._arr.pop();
+    }
+    peek() {
+      return this._arr[this._arr.length - 1];
+    }
+  }
+  
+  const stack = new Stack();
 
 $( document ).ready(function() {
     // console.log(a_tag)
     $(a_tag).each(function(){
         $(this).click(function(){
             var curr_page = $("section").attr("class"); 
-            var uri = $(this).data('position');
+            var url = $(this).data('position');
+            var state = url.replace("./html","").replace(".html","");
             // console.log(uri);
             var main = $('#main');
             var href= $(this).data('focus');
             // sessionStorage.setItem("href",href);
-            if(uri == "./html/"+curr_page+".html"){
+            if(url == "./html/"+curr_page+".html"){
                 if(curr_page =="company"){
-                    console.log('동일페이지로')
+                    // console.log('동일페이지로')
                     moveScroll(href);
                 }
-            }else if(uri == "./html/company.html"){
+            }else if(url == "./html/company.html"){
                 // console.log("회사소개 페이지로")
                 // goTop();
                 main.css("opacity","0");
                 main.animate({
                 }, function(){
                     prev_page= curr_page;
-                    main.load(uri);
+                    // main.load(url, stack.push(url), stack.push(url) );
+                    main.load(url, stack.push(url), pushState("")); 
+                    
                     $(this).animate({
                         opacity: 1,
                     },1000,'linear');
@@ -40,10 +60,12 @@ $( document ).ready(function() {
                 main.animate({
                 }, function(){
                     prev_page= curr_page;
-                    main.load(uri); 
+                    // main.load(url, stack.push(url), stack.push(url)); 
+                    main.load(url, stack.push(url),pushState("")); 
+
                     $(this).animate({
                         opacity: 1
-                    },1000,'linear');
+                    }, 1000, 'linear');
                 }); 
             }
         
@@ -52,9 +74,6 @@ $( document ).ready(function() {
 });
 
 
-function goTop(){
-	document.documentElement.scrollTop = 0; 
-}
 
 function moveScroll(href){
     $(window).scrollTop($(href).offset().top);
@@ -77,10 +96,26 @@ function noEvent() {
     // 이전 페이지로 돌아아오기
     else if(event.keyCode == "8") {
         // console.log("where is "+prev_page);
-        $("#main").load("./html/"+prev_page+".html");
-        goTop();
+        
+        // console.log(stack.pop());
+        var uri = stack.pop();
+        if(uri != undefined){
+            $("#main").load(uri);
+            goTop();
+            // console.log(stack._arr);
+        }else {
+           window.refresh();
         }
     }
+}
 
+function goTop(){
+	document.documentElement.scrollTop = 0; 
+}
     
+
+function pushState(url) {
+    window.history.pushState("","",url);
+    // console.log(window.history);
+}
 document.onkeydown = noEvent;
