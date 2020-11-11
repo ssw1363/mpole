@@ -187,8 +187,6 @@
   
 })(jQuery);
 
-document.cookie = 'same-site-cookie=foo; SameSite=Lax';
-document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
 
 $('#exampleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
@@ -258,4 +256,6 @@ function checkEmail(str) {
 
 }
 
-const cur_page = document.getElementById('curr_page');
+document.cookie = "safeCookie1=foo; SameSite=Lax"; 
+document.cookie = "safeCookie2=foo";  
+document.cookie = "crossCookie=bar; SameSite=None; Secure";

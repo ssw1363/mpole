@@ -1,6 +1,6 @@
 <?php 
-require_once('./load_video.php');
-$result = load_list();
+require_once('./load_list.php');
+$result = load_video();
   
 ?>
 
@@ -42,7 +42,7 @@ function preview_evt() {
       ++page;
       $.ajax({
         type : "POST",
-        url : "./php/ajax_more.php",
+        url : "./php/ajax_more_video.php",
         data : { "currentPage" : page },
         success : function(html){
           // console.log("성공");

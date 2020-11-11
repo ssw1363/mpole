@@ -33,7 +33,7 @@ $mail = new PHPMailer(true);
     $mail -> SMTPAuth = true;                       // SMTP 인증을 사용함
     $mail -> Username = "swseo@mpole.co.kr";        // 메일 계정
     $mail -> Password = "dhksl2437";                // 메일 비밀번호
-    $mail -> SMTPSecure = "tls";                    // SSL을 사용함
+    $mail -> SMTPSecure = "TLS";                    // SSL을 사용함
     // $mail -> Port = 465;                            // email 보낼때 사용할 포트를 지정
     $mail -> Port = 587;                            // email 보낼때 사용할 포트를 지정
     $mail -> CharSet = "utf-8";                     // 문자셋 인코딩
@@ -42,7 +42,7 @@ $mail = new PHPMailer(true);
     $mail -> setFrom("swseo@mpole.co.kr", "문의메일");
 
     // 받는 메일
-    $mail -> addAddress("swseo@mpole.co.kr", "엠폴시스템");
+    $mail -> addAddress("as@mpole.co.kr", "엠폴시스템");
     // 첨부파일
     if($fname !=""){
       $mail->AddAttachment($_FILES['file']['tmp_name'],$fname);

@@ -71,6 +71,7 @@ $( document ).ready(function() {
         
         });
     });   
+
 });
 
 
@@ -99,7 +100,10 @@ function noEvent() {
         
         // console.log(stack.pop());
         var uri = stack.pop();
-        if(uri != undefined){
+        if($("body").hasClass('modal-open')){
+            return true;
+        }
+        else if(uri != undefined){
             $("#main").load(uri);
             goTop();
             // console.log(stack._arr);

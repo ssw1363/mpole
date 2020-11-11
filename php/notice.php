@@ -94,50 +94,6 @@
           }
           ?>
 
-
-
-
-
-
-
-
-
-
-          <!-- <tr>
-            <td scope="row">5</td>
-            <td>라이다 센서를 이용한 컨베이어 벨트 사고 예방 솔루션</td>
-            <td>mpolesystem</td>
-            <td>2019-06-15</td>
-            <td>57</td>
-          </tr>
-          <tr>
-            <td scope="row">4</td>
-            <td>라이다 기반 외곽 침입 감지 솔루션 제안</td>
-            <td>mpolesystem</td>
-            <td>2019-06-21</td>
-            <td>134</td>
-          </tr>
-          <tr>
-            <td scope="row">3</td>
-            <td>소방방재 솔루션 제안</td>
-            <td>mpolesystem</td>
-            <td>2019-06-21</td>
-            <td>62</td>
-          </tr>
-          <tr>
-            <td scope="row">2</td>
-            <td>외곽 침임 감지 솔루션 제안</td>
-            <td>mpolesystem</td>
-            <td>2019-06-21</td>
-            <td>48</td>
-          </tr>
-          <tr>
-            <td scope="row">1</td>
-            <td>RF-ID 기반 Tracking 솔루션 제안</td>
-            <td>mpolesystem</td>
-            <td>2019-06-21</td>
-            <td>48</td>
-          </tr> -->
         </tbody>
       </table>
     </div>
@@ -167,17 +123,7 @@
         &nbsp;&nbsp;
         <!-- <a class="btn btn-primary align-items-end" onclick="write_notice()">글 쓰기</a> -->
       
-      <!-- <nav aria-label="Page navigation" class="btn-toolbar justify-content-between" role="toolbar">
-        <div></div>
-        <ul class="pagination justify-content-center">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-        <div></div>
-      </nav> -->
+      
   </div>
 </section>
 
