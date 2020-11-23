@@ -6,19 +6,17 @@
 // require "./PHPMailer/src/SMTP.php";
 // require "./PHPMailer/src/Exception.php";
 require '../vendor/PHPMailer/PHPMailerAutoload.php';
-
+require_once('../connectDB.php');
+$conn= isConnectDb($db);
 $dw_only = false;
+
+$sql = "SELECT * FROM main_info";
+$result = mysqli_query($conn,$sql);
 
 //▶ method=post 방식으로 넘어온 값들을 extract 시킴(php.ini 파일에서 register_globals=off 일때 필요)
 extract($_POST);
 $fname = $_FILES['file']['name'];
 $fname2 = $_FILES['file2']['name'];
-
-// echo $fname;
-// echo $from_name;
-// echo $from;
-// echo $subject;
-// echo $content;
 
 
 $mail = new PHPMailer(true);
@@ -29,20 +27,19 @@ $mail = new PHPMailer(true);
     $mail -> SMTPDebug = 2;    // 디버깅 설정
     $mail -> isSMTP(true);        // SMTP 사용 설정
 
-    $mail -> Host = "wsmtp.ecounterp.com";          // email 보낼때 사용할 서버를 지정
+    $mail -> Host = $result[0][host];          // email 보낼때 사용할 서버를 지정
     $mail -> SMTPAuth = true;                       // SMTP 인증을 사용함
-    $mail -> Username = "swseo@mpole.co.kr";        // 메일 계정
-    $mail -> Password = "dhksl2437";                // 메일 비밀번호
-    $mail -> SMTPSecure = "TLS";                    // SSL을 사용함
-    // $mail -> Port = 465;                            // email 보낼때 사용할 포트를 지정
-    $mail -> Port = 587;                            // email 보낼때 사용할 포트를 지정
+    $mail -> Username = $result[0][username];        // 메일 계정
+    $mail -> Password = $result[0][password];                // 메일 비밀번호
+    $mail -> SMTPSecure = $result[0][smtpsecure];                    // SSL을 사용함
+    $mail -> Port = $result[0][host];                            // email 보낼때 사용할 포트를 지정
     $mail -> CharSet = "utf-8";                     // 문자셋 인코딩
 
     // 보내는 메일
-    $mail -> setFrom("swseo@mpole.co.kr", "문의메일");
+    $mail -> setFrom($result[0][username], "문의메일");
 
     // 받는 메일
-    $mail -> addAddress("as@mpole.co.kr", "엠폴시스템");
+    $mail -> addAddress('ssw1363@naver.com', "엠폴시스템");
     // 첨부파일
     if($fname !=""){
       $mail->AddAttachment($_FILES['file']['tmp_name'],$fname);

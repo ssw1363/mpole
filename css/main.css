@@ -713,11 +713,14 @@ section {
 --------------------------------------------------------------*/
 
 .IMP .blackbox2 {
-  width: 16.6%;
-  padding-top: 40px;
-  padding-right: 3%;
+  width: 15%;
+  margin-left: 2%;
+  margin-top: 10rem;
 }
 
+.IMP .blackbox2:first-child {
+  margin-left: 0;
+}
 .IMP .blackbox2 img{ 
   width: 100%;
 }
